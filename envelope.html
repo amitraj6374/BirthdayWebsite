@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>A Letter For Priya ❤️</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="welcome-container">
+
+    <div style="font-size:120px;">
+        💌
+    </div>
+
+    <h2>A Special Letter For Priya ❤️</h2>
+
+    <p>
+        Before the cake, before the wishes...
+        there's something I'd like you to read.
+        <br><br>
+        Tap the envelope to open it ❤️
+    </p>
+
+    <button id="openLetterBtn">
+        Open Envelope 💌
+    </button>
+
+</div>
+
+<script>
+
+const openLetterBtn =
+    document.getElementById("openLetterBtn");
+
+if (openLetterBtn) {
+
+    openLetterBtn.addEventListener(
+        "click",
+        function () {
+
+            window.location.href =
+                "letter.html";
+
+        }
+    );
+
+}
+
+</script>
+
+</body>
+</html>

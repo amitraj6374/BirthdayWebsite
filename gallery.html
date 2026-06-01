@@ -1,0 +1,116 @@
+\<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Priya's Smile Gallery ❤️</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        .gallery-image{
+            width:350px;
+            max-width:90%;
+            border-radius:20px;
+            box-shadow:0 0 20px rgba(255,255,255,0.5);
+            margin-top:20px;
+            transition:0.4s ease;
+        }
+
+        #caption{
+            color:white;
+            margin-top:20px;
+            margin-bottom:20px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="welcome-container">
+
+    <h1>📸 Priya's Smile Gallery ❤️</h1>
+
+    <p>
+        A few beautiful moments worth remembering ✨
+    </p>
+
+    <img
+        id="memoryImage"
+        class="gallery-image"
+       src="images/photo1.jpg"
+        alt="Priya">
+
+    <h3 id="caption">
+        That smile can improve almost any day 😊
+    </h3>
+
+    <button id="nextPhotoBtn">
+        Next Photo ❤️
+    </button>
+
+</div>
+
+<script>
+
+const photos = [
+    "images/photo1.jpg",
+    "images/photo2.jpg",
+    "images/photo3.jpg",
+    "images/photo4.jpg"
+];
+
+const captions = [
+    "That smile can improve almost any day 😊",
+    "Always carrying her own sunshine ✨",
+    "The smile that usually arrives before the joke 😄❤️",
+    "Looking elegant... and probably planning some mischief 😄 🌸"
+];
+
+let index = 0;
+
+const image =
+    document.getElementById("memoryImage");
+
+const caption =
+    document.getElementById("caption");
+
+document
+.getElementById("nextPhotoBtn")
+.addEventListener("click", function(){
+
+    index++;
+
+    if(index >= photos.length){
+
+        window.location.href =
+            "reasons.html";
+
+        return;
+    }
+
+    image.style.opacity = "0";
+
+    setTimeout(function(){
+
+        image.src = photos[index];
+
+        caption.innerHTML =
+            captions[index];
+
+        image.style.opacity = "1";
+
+    }, 250);
+
+});
+
+</script>
+
+</body>
+</html>

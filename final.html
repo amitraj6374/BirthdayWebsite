@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Priya ❤️</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+    .cake{
+        font-size:120px;
+        animation:bounce 2s infinite;
+    }
+
+ .birthday-photo{
+    width:300px;
+    height:300px;
+    object-fit:cover;
+    object-position:center top;
+    border-radius:50%;
+    border:5px solid white;
+    box-shadow:0 0 25px rgba(255,255,255,0.7);
+}
+
+    .final-message{
+        max-width:700px;
+        margin:20px auto;
+        line-height:1.8;
+        color:white;
+        font-size:1.2rem;
+    }
+
+    .confetti{
+        position:fixed;
+        top:-20px;
+        font-size:25px;
+        animation:fall linear infinite;
+        z-index:1;
+        pointer-events:none;
+    }
+
+    #playMusicBtn{
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+
+    @keyframes fall{
+
+        from{
+            transform:translateY(-20px);
+        }
+
+        to{
+            transform:translateY(110vh);
+        }
+
+    }
+
+    @keyframes bounce{
+
+        0%,100%{
+            transform:translateY(0);
+        }
+
+        50%{
+            transform:translateY(-20px);
+        }
+
+    }
+
+</style>
+
+</head>
+<body>
+
+<audio id="birthdayMusic" loop>
+    <source src="music/birthday.mp3" type="audio/mpeg">
+</audio>
+
+<div class="welcome-container">
+<div class="cake">🎂</div>
+
+<img
+    src="images/photo-final.jpg"
+    alt="Priya"
+    class="birthday-photo">
+
+<h1>Happy Birthday Priya 🎂❤️</h1>
+<button id="playMusicBtn">
+    🎵 Play Special Song
+</button>
+<div class="final-message">
+    Dear Priya,
+    <br><br>
+    Today is all about you ❤️
+    <br><br>
+    I hope your day is filled with laughter,
+    good food, happy surprises and the people
+    who care about you.
+    <br><br>
+    May this year bring you success in everything
+    you're working towards and countless reasons
+    to smile.
+    <br><br>
+    Keep being the cheerful, fun and wonderful
+    person that makes every moment a little better.
+    <br><br>
+    Never stop laughing the way you do,
+    because that's honestly one of the best things about you. 😊
+    <br><br>
+    Wishing you a birthday as amazing as you are.
+    <br><br>
+    Enjoy your special day
+    With lots of good wishes ❤️
+    <br><br>
+</div>
+
+</div>
+
+<script>
+
+const emojis = ["🎉","🎊","✨","💖","❤️"];
+
+for(let i = 0; i < 60; i++){
+
+    const confetti = document.createElement("div");
+
+    confetti.className = "confetti";
+
+    confetti.innerHTML =
+        emojis[Math.floor(Math.random() * emojis.length)];
+
+    confetti.style.left =
+        Math.random() * 100 + "%";
+
+    confetti.style.animationDuration =
+        (3 + Math.random() * 5) + "s";
+
+    confetti.style.animationDelay =
+        Math.random() * 5 + "s";
+
+    document.body.appendChild(confetti);
+
+}
+
+document
+.getElementById("playMusicBtn")
+.addEventListener("click", function(){
+
+    document
+        .getElementById("birthdayMusic")
+        .play();
+
+    this.style.display = "none";
+
+});
+
+</script>
+
+</body>
+</html>
